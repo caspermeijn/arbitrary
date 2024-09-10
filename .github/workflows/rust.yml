@@ -53,3 +53,14 @@ jobs:
       run: cargo install cargo-fuzz
     - name: "Fuzz for 3 minutes"
       run: cargo fuzz run int_in_range -- -max_total_time=$((3 * 60))
+
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: rustup update
+      - name: "doc --lib --all-features"
+        run: |
+          cargo doc --no-deps --all-features --document-private-items
+        env:
+          RUSTDOCFLAGS: -Dwarnings

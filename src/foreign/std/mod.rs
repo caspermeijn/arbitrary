@@ -1,5 +1,5 @@
 //! Implementations of [`Arbitrary`] for [`std`] types,
-//!   excluding those in [`core`] and [`alloc`].
+//!   excluding those in [`core`] and 
 //!
 //! [`Arbitrary`]: crate::Arbitrary
 
